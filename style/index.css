@@ -1,0 +1,548 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+#left {
+    display: inline-block;
+    width: 280px;
+    height: 100%;
+    margin: 0 10px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#camera {
+    width: 100%;
+    height: 210px;
+    background-color: dimgray;
+}
+
+#camera_video {
+    width: 100%;
+    height: 100%;
+}
+
+#chapter_head {
+    width: 100%;
+    height: 36px;
+    background-color: #f2f7f6;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    line-height: 36px;
+    box-shadow: 0px 3px 3px #e7e7e7;
+}
+
+#chapter_list {
+    width: 100%;
+    height: 100%;
+    height: calc(100% - 246px);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+}
+
+html ::-webkit-scrollbar {
+    width: 7px;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background-color: #2dc6ff;
+}
+
+html ::-webkit-scrollbar-track {
+    background-color: #efefef;
+    color: #28445c;
+}
+
+#chapter_list ul li {
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+    height: 43px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+#chapter_list ul li:hover {
+    background: #edfafd;
+}
+
+#chapter_list ul li .circle {
+    width: 21px;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 20px;
+    line-height: 19px;
+    margin-left: 7px;
+    margin-right: 10px;
+    color: #555555;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 2px;
+    background-color: #FFFFFF;
+    border: 1px solid #dcdedf;
+    border-radius: 52px;
+}
+
+#chapter_list ul li.clicked .circle {color: #00baff;}
+
+#chapter_list ul li .title {
+    width: 144px;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #555555;
+    height: 16px;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#chapter_list ul li.clicked .title {color: #00baff;}
+
+#chapter_list ul li .chapter_time {
+    position: absolute;
+    top: 50%;
+    left: 184px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #999999;
+    max-width: 50px;
+    margin: 0px 0px 0px 10px;
+    overflow: hidden;
+}
+#chapter_list ul li.clicked .chapter_time {color: #00baff;}
+
+#chapter_list ul li .hover_img {
+    width: 170px;
+    height: 124px;
+    left: 250px;
+    top: 0px;
+    display: none;
+    z-index: 9999;
+    position: fixed;
+    background: #FFFFFF;
+    border-radius: 3px;
+    -moz-box-shadow: 0 0 8px #c5c5c5;
+    -webkit-box-shadow: 0 0 8px #c5c5c5;
+    box-shadow: 0 0 8px #c5c5c5;
+    border: 1px solid #FFFFFF;
+}
+
+#chapter_list ul li .hover_img img {
+    width: 170px;
+    height: 124px;
+}
+
+#center {
+    display: inline-block;
+    height: 100%;
+    width: calc(100% - 560px);
+    margin: 0;
+    background-color: #e5e5e5;
+    position: absolute;
+    left: 280px;
+    top: 0;
+}
+
+#center .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#course_head {
+    width: 100%;
+    height: 44px;
+    position: relative;
+}
+
+#course_head .fa {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #33adff;
+}
+
+#course_head #course_name {
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    transform: translateY(-50%);
+    color: #3c3c3c;
+    font-size: 16px;
+}
+
+#ppt_player {
+    margin: 0 10px;
+    height: calc(100% - 104px);
+    background-color: #dcdcdc;
+    box-shadow: 0 0 8px #c5c5c5;
+    position: relative;
+}
+
+#ppt_player #draw_canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+
+#ppt_player #ppt_img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#ppt_player #camera_desktop {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#player_footer {
+    margin: 0 10px;
+    background-color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+#current_time_tip{
+    padding: 3px;
+    height: 15px;
+    top: -30px;
+    min-width: 54px;
+    display: none;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 15px;
+    position: absolute;
+    background: #000000;
+    filter: alpha(opacity = 70);
+    opacity: 0.7;
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    -webkit-opacity: 0.7;
+}
+
+#current_time_text{
+    width: 100%;
+    height: 100%;
+    display: block;
+    line-height: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 12px
+}
+
+#triangle_down{
+    width: 0;
+    height: 0;
+    top: 21px;
+    left: 38%;
+    position: absolute;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #000000;
+}
+
+#progress_bar {
+    height: 6px;
+    background-color: #b5b5b5;
+    margin: 5px 0;
+    position: relative;
+    cursor: pointer;
+    min-width: 30px
+}
+
+#progress_bar_now{
+    height: 6px;
+    background-color: #00bbfe;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 27%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+#video_circle_handle{
+    width: 18px;
+    height: 18px;
+    background: url(img/silder_icon.png) no-repeat;
+    float: right;
+    cursor: pointer;
+    outline: none;
+    margin-top: -5px;
+    margin-right: -9px;
+}
+
+#player_bar {
+    height: 44px;
+    width: 100%;
+}
+
+#player_bar #open_folder {
+    float: left;
+    cursor: pointer;
+    color: #888;
+    font-size: 18px;
+    margin: 10px 0 0 40px;
+}
+
+#player_bar #play_pause {
+    float: left;
+    cursor: pointer;
+    color: #888;
+    font-size: 18px;
+    margin: 10px 0 0 40px;
+    width: 18px;
+    height: 18px;
+}
+
+#player_bar #backward {
+    float: left;
+    cursor: pointer;
+    color: #888;
+    font-size: 18px;
+    margin: 10px 0 0 40px;
+    width: 18px;
+    height: 18px;
+}
+
+#player_bar #forward {
+    float: left;
+    cursor: pointer;
+    color: #888;
+    font-size: 18px;
+    margin: 10px 0 0 40px;
+    width: 18px;
+    height: 18px;
+}
+
+#player_bar #open_folder:hover {
+    color: #33adff;
+}
+
+#player_bar #play_pause:hover {
+    color: #33adff;
+}
+
+#player_bar #video_sound .fa:hover {
+    color: #33adff;
+}
+
+#player_bar #backward:hover {
+    color: #33adff;
+}
+
+#player_bar #forward:hover {
+    color: #33adff;
+}
+
+#player_bar #video_time {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    color: #77888f;
+    font-size: 14px;
+    margin: 10px 0 0 40px;
+}
+
+#player_bar #video_speed {
+    margin-top: 10px;
+    float: right;
+    font-size: 14px;
+    line-height: 24px;
+    width: 40px;
+    height: 24px;
+    background-color: #78dbff;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+#player_bar #video_speed #video_speed_type {
+    width: 80px;
+    height: 140px;
+    background-color: #fff;
+    z-index: 999;
+    padding: 10px;
+    box-shadow: 0 6px 16px #9a9a9a;
+    position: absolute;
+    left: -30px;
+    bottom: 30px;
+    overflow: hidden;
+}
+
+#player_bar #video_speed #video_speed_type li {
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    color: #333;
+    transition: all 250ms;
+    list-style: none;
+}
+
+#player_bar #video_speed #video_speed_type li:hover {
+    background-color: #78dbff;
+}
+
+#player_bar #video_sound {
+    margin: 10px 0 0 40px;
+    float: right;
+    font-size: 24px;
+}
+
+#player_bar #video_sound #sound_button {
+    width: 20px;
+    height: 20px;
+}
+
+#player_bar #video_sound .fa {
+    float: left;
+    color: #888;
+    cursor: pointer;
+}
+
+#player_bar #video_sound #sound_slide {
+    cursor: pointer;
+    width: 75px;
+    height: 6px;
+    margin: 8px 30px 0 15px;
+    float: left;
+    border: 1px solid #dddddd;
+    background: #eeeeee;
+    color: #333333;
+    border-radius: 4px;
+    position: relative;
+}
+
+#sound_slide_now{
+    height: 6px;
+    background-color: #00bbfe;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+#sound_circle_handle{
+    width: 14px;
+    height: 14px;
+    background: url(img/voice_icon.png) no-repeat;
+    float: right;
+    cursor: pointer;
+    outline: none;
+    margin-top: -4px;
+    margin-right: -7px;
+}
+
+#right {
+    display: inline-block;
+    width: 280px;
+    height: 100%;
+    margin: 0 0 0 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#right #chat_head {
+    height: 41px;
+    width: 100%;
+    background-color: #f2f7f6;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    line-height: 36px;
+}
+
+#right #chat_list {
+    width: 100%;
+    height: calc(100% - 41px);
+}
+
+#right #chat_list ul li {
+    list-style: none;
+    height: auto;
+    width: 100%;
+    margin: 1px 0;
+    border-bottom: 1px dashed #eeeeee;
+}
+
+#right #chat_list ul li .c_head {
+    width: 100%;
+    height: 28px;
+    padding: 5px 0;
+}
+
+#right #chat_list ul li .user_name {
+    color: #888;
+    float: left;
+    min-width: 146px;
+    max-width: 146px;
+    white-space: nowrap;
+    height: 28px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 28px;
+    padding: 0px 4px 0px 30px;
+}
+
+#right #chat_list ul li .chat_time {
+    color: #bdbdbd;
+    float: left;
+    line-height: 28px;
+    font-size: 12px;
+}
+
+#right #chat_list ul li p {
+    margin: 3px 0 15px 35px;
+    font-size: 12px;
+    color: #000000;
+    line-height: 18px;
+    word-break: break-all;
+}

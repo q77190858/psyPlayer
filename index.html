@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <title>播放器</title>
+  <link rel="stylesheet" type="text/css" href="./style/index.css">
+  <link rel="stylesheet" type="text/css" href="./style/font-awesome.min.css">
+</head>
+
+<body>
+  <div id="left">
+    <div id="camera">
+      <video id="camera_video" preload="true" 
+      webkit-playsinline="webkit-playsinline" playsinline="playsinline" 
+      x5-video-player-type="h5-page" role="application" src=""></video>
+    </div>
+    <div id="chapter_head">章节</div>
+    <div id="chapter_list">
+      <ul id="chapter_list_ul">
+        <li img="file://D:\心理咨询学习\心理咨询视频和课件下载2\04心理催眠师中级-\01心理催眠师 ( 共22节课 )\01初级\第1节-催眠的困惑\img\41c9920a4c83945eb1ffa77950-1_1.jpg">
+          <span class="circle">1</span>
+          <span class="title">20220829先导课</span>
+          <span class="chapter_time">09:09</span>
+          <div class="hover_img"><img src="file://D:\心理咨询学习\心理咨询视频和课件下载2\04心理催眠师中级-\01心理催眠师 ( 共22节课 )\01初级\第1节-催眠的困惑\img\41c9920a4c83945eb1ffa77950-1_1.jpg"/></div>
+        </li>
+        <li img="file://D:\心理咨询学习\心理咨询视频和课件下载2\04心理催眠师中级-\01心理催眠师 ( 共22节课 )\01初级\第1节-催眠的困惑\img\41c9920a4c83945eb1ffa77950-3_1.jpg">
+          <span class="circle">2</span>
+          <span class="title">20220829先导课</span>
+          <span class="chapter_time">10:31</span>
+          <div class="hover_img"><img src="file://D:\心理咨询学习\心理咨询视频和课件下载2\04心理催眠师中级-\01心理催眠师 ( 共22节课 )\01初级\第1节-催眠的困惑\img\41c9920a4c83945eb1ffa77950-3_1.jpg"/></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="center">
+    <div class="container">
+      <div id="course_head">
+        <i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i>
+        <span id="course_name">先导课</span>
+      </div>
+      <div id="ppt_player">
+        <canvas id="draw_canvas"></canvas>
+        <img id="ppt_img" src=""/>
+        <video id="camera_desktop" preload="true" 
+      webkit-playsinline="webkit-playsinline" playsinline="playsinline" 
+      x5-video-player-type="h5-page" role="application" src=""></video>
+      </div>
+      <div id="player_footer">
+        <div id="current_time_tip">
+          <span id="current_time_text">01:44:51</span>
+          <div id="triangle_down"></div>
+        </div>
+        <div id="progress_bar">
+          <div id="progress_bar_now">
+            <div id="video_circle_handle"></div>
+          </div>
+        </div>
+        <div id="player_bar">
+          <i id="open_folder" class="fa fa-folder-open" aria-hidden="true"></i>
+          <i id="play_pause" class="fa fa-play" aria-hidden="true"></i>
+          <i id="backward" class="fa fa-backward" aria-hidden="true"></i>
+          <i id="forward" class="fa fa-forward" aria-hidden="true"></i>
+          <div id="video_time">
+            <span id="cur_time">00:00:00</span>
+            <span>/</span>
+            <span id="total_time">01:28:50</span>
+          </div>
+
+          <div id="video_sound">
+            <i id="sound_button" data-width="75" class="fa fa-volume-down"></i>
+            <div id="sound_slide">
+              <div id="sound_slide_now">
+                <div id="sound_circle_handle"></div>
+              </div>
+            </div>
+          </div>
+          <div id="video_speed">
+            <span id="video_speed_show">倍速</span>
+            <ul id="video_speed_type" style="display: none;">
+              <li data-speed="1">正常播放</li>
+              <li data-speed="0.75">0.75x</li>
+              <li data-speed="1.2">1.2x</li>
+              <li data-speed="1.5">1.5x</li>
+              <li data-speed="1.8">1.8x</li>
+              <li data-speed="2">2x</li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="right">
+    <div id="chat_head">
+      <span>聊天</span>
+    </div>
+    <div id="chat_list">
+      <ul id="chat_list_ul">
+        <li>
+          <div class="c_head">
+            <span class="user_name">马骏</span>
+            <span class="chat_time">05:05</span>
+          </div>
+          <p>老师好</p>
+        </li>
+        <li>
+          <div class="c_head">
+            <span class="user_name">紫秋</span>
+            <span class="chat_time">05:30</span>
+          </div>
+          <p>送给老师：花花花</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src='./renderer.js'></script>
+</body>
+
+</html>
