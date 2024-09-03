@@ -231,7 +231,13 @@ function drawCanvas(drawContent) {
     var fontSize = Number(paramsList[3]) * WRatio
     ctx2d.font = fontSize + "px Heiti"
     ctx2d.fillStyle = "red"
-    ctx2d.fillText(txt, positions[4] * WRatio, positions[5] * HRatio)
+    strs = txt.split("\n")
+    startX = positions[4]
+    startY = positions[5]
+    txtH = fontSize * 1.2
+    for (let i = 0; i < strs.length; i++) {
+      ctx2d.fillText(strs[i], startX * WRatio, startY * HRatio + fontSize * i)
+    }
   }
   //画rectangle
   else if (head.split("_").pop().startsWith("r")) {
@@ -434,7 +440,7 @@ openButtonElement.addEventListener('click', async () => {
         drawList.push({ "st": chapterList[i + 1]["page"]["st"], "c": "" })
     }
   }
-  console.log("drawList: ",drawList)
+  console.log("drawList: ", drawList)
 
   chatList = jsonData['msgList']
   chatListElement.innerHTML = ''
