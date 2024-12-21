@@ -451,7 +451,7 @@ openButtonElement.addEventListener('click', async () => {
       <span class="user_name">${chatList[i]['nickname']}</span>
       <span class="chat_time">${formatSeconds(chatList[i]['time'])}</span>
     </div>
-    <p>${chatList[i]['msg']}</p>`
+    <p>${faceCodeToEmoji(chatList[i]['msg'])}</p>`
     li.setAttribute("data_time", chatList[i]["time"])
     chatListElement.appendChild(li)
   }
@@ -641,6 +641,19 @@ document.onmouseup = (event) => {
     updateCanvas(false)
   }
   document.mouseDownElement = ''
+}
+//将聊天记录中的[]表情代码转换为Emoji表情
+const face2Emoji = {'[aha]':"😲", '[tongue]':"😛", '[why]':"❓️", '[hard]':"😣", 
+  '[S_FLOWER]':"🌹", '[dog]':'🐶', '[爱心]':'💖', '[happy]':'😄', '[IMG]':'🧩', 
+  '[like]':'🩷', '[titter]':'🤭', '[expect]':'🤩', '[melon]':'🍈', '[love]':'💕',
+  '[laugh]':'😄', '[good]':'👍', '[bye]':'👋', '[pitiful]':'🥺', '[slime]':'🤢', 
+  '[handssors]':'✌️', '[amaz]':'😲', '[handclap]':'👏', '[flower]':'🌹', '[daze]':'😵‍💫', 
+  '[silly]':'🤪', '[six]':'6️⃣', '[heart]':'❤️', '[cool]':'😎'}
+function faceCodeToEmoji(content){
+  for(var fc in face2Emoji){
+    content = content.replaceAll(fc,face2Emoji[fc])
+  }
+  return content
 }
 
 function clearChapterListClicked() {
