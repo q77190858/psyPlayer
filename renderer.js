@@ -493,9 +493,9 @@ playPauseElement.addEventListener('click', () => {
     intervalID = null
     playPauseElement.setAttribute("class", "fa fa-play")
   } else {
-    clock()
     intervalID = setInterval(clock, 1000)
     playPauseElement.setAttribute("class", "fa fa-pause")
+    clock()
   }
 })
 backwardElement.addEventListener('click', () => {
